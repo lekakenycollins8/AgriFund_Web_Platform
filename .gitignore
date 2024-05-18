@@ -1,0 +1,21 @@
+Django specific files
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+# If you have a virtual environment inside your project directory
+venv/
+env/
+
+# Database files
+*.sqlite3
+
+# Ignore migrations
+*/migrations/*
+
+# Ignore compiled files
+*.py[cod]
+*$py.class
+
