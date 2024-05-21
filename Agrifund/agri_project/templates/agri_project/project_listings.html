@@ -1,0 +1,27 @@
+{% extends 'agri_project/base.html' %}
+{% block content %}
+
+<section class="container-fluid ms-auto"><br>
+        <h1>Project Listings</h1>
+        {% for project in projects %}
+        <div class="card mt-4 mt-lg-0 mb-4">
+            <article>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item justify-content-between align-items-start">
+                    	<div class="card-header d-lg-flex">
+                        	<h2 class="text-primary mb-0">{{ project.name }}</h2>
+                    	</div>
+                    	<p><strong>Description:</strong> {{ project.description|truncatewords:20 }}</p>
+                    	<p><strong>Funding Goal:</strong> ${{ project.funding_goal }}</p>
+                    	<p><strong>Current Status:</strong> <span class="badge bg-info-soft">{{ project.current_status }}</span></p>
+                    	<p><a href="/projects/{{ project.id }}/"><span class="badge bg-primary">View Details</span></a></p>
+                    <li>
+                </ul>
+            </article>
+        </div>
+        {% empty %}
+            <p>No projects available at the moment. <a href="/projects/create/"><span class="badge bg-primary">Create a new project</span></a>.</p>
+        {% endfor %}
+</section>
+
+{% endblock %}
