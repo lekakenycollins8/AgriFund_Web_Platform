@@ -1,0 +1,56 @@
+{% extends 'agri_project/base.html' %}
+{% block content %}
+<div class="container-fluid">
+	<br><div class="card mb-4">
+              <div class="card-body">
+		      <div class="card-header">
+                  <h3 class="mb-0"><strong>Agribusiness Project Details</strong></h3>
+                </div>
+                <form method="post" action="{% url 'project_create' %}">
+                  {% csrf_token %}
+                  <div class="form-group">
+                      <label for="name">Project Name<span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="name" name="name" maxlength="50" required>
+                      <small class="form-text text-muted">The name of agribusiness project.</small>
+                  </div>
+              
+                  <div class="form-group">
+                      <label for="description">Project Description<span class="text-danger">*</span></label>
+                      <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+                      <small class="form-text text-muted">Project description.</small>
+                  </div>
+              
+                  <div class="form-group">
+                      <label for="funding_goal">Funding Goal</label>
+                      <input type="number" step="0.01" class="form-control" id="funding_goal" name="funding_goal" required>
+                      <small class="form-text text-muted">Funding needed (in USD).</small>
+                  </div>
+              
+                  <div class="form-group">
+                      <label for="current_status">Current Status</label>
+                      <select class="form-control" id="current_status" name="current_status">
+                          <option value="Open">Open</option>
+                          <option value="Closed">Closed</option>
+                          <option value="Onhold">Onhold</option>
+                      </select>
+                      <small class="form-text text-muted">Current status of the project.</small>
+                  </div>
+              
+                  <div class="form-group">
+                      <label for="farmer_name">Farmer Name<span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="farmer_name" name="farmer_name" maxlength="100" required>
+                      <small class="form-text text-muted">Your names.</small>
+                  </div>
+              
+                  <div class="form-group">
+                      <label for="farmer_email">Farmer Email<span class="text-danger">*</span></label>
+                      <input type="email" class="form-control" id="farmer_email" name="farmer_email" required>
+                      <small class="form-text text-muted">Farmer's Email.</small>
+                  </div>
+              
+                  <button type="submit" class="btn btn-primary btn-lg mt-12">Create</button>
+              </form>
+            </div>
+          </div>
+</div>
+{% endblock %}

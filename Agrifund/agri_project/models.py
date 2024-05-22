@@ -45,6 +45,10 @@ class InvestorInterest(BaseModel):
     investor_fname = models.CharField(max_length=50, help_text="Investor's first name")
     investor_lname = models.CharField(max_length=50, help_text="Investor's last name")
     investor_email = models.EmailField(help_text="investor email")
+    amount_offered = models.DecimalField(max_digits=10, decimal_places=2, default=1000,
+            help_text="Amount offered for investment")
+    interest_rate = models.DecimalField(max_digits=5, decimal_places=2, default=10.5,
+            help_text="interest rate for the amount offered")
     
     def __str__(self):
         return "{} {} - {}".format(self.investor_fname, self.investor_lname, 
