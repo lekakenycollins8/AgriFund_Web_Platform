@@ -27,22 +27,22 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+            <nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">
 			    {% load static %}
 			    <img src="{% static 'images/AgriFund.png' %}" alt="Logo" style="display:inline-block; height:40px; width:40px;margin-right: 10px;">
-                        <span class="brand-text">AgriFund</span>
+                        <span class="brand-text text-white">AgriFund</span>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
-			    <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
-                            <li class="nav-item"><a href="/projects/create/" class="nav-link">New Project</a></li>
-                            <li class="nav-item"><a href="/loans/" class="nav-link">Loans</a></li>
+				<li class="nav-item"><a href="{% url 'landing_page' %}" class="nav-link active text-white" aria-current="page">Home</a></li>
+				<li class="nav-item"><a href="{% url 'project_listing' %}" class="nav-link text-white">Projects</a></li>
+				<li class="nav-item"><a href="{% url 'project_create' %}" class="nav-link text-white">New Project</a></li>
+				<li class="nav-item"><a href="{% url 'apply_loan' %}" class="nav-link text-white">Loans</a></li>
                         </ul>
                     </div>
                 </div>

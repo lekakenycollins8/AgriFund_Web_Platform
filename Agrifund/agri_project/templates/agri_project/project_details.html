@@ -37,34 +37,29 @@
 <section class="container-fluid">
 	<h1><span class="badge bg-info text-dark">For Investor</span>: Fill details to express interest</h1>
               <div class="card mb-4">
-                <form>
+                <form method="POST">
+		  {% csrf_token %}
                   <div class="card-header">
                     <h4 class="mb-0"><strong>Investor Details</strong></h4>
                   </div>
-                  <div class="card-body">
-                    <div class="mb-3">
-                      <label for="investor-fname" class="col-form-label">First Name:</label>
-                      <input type="text" class="form-control" id="investor-fname">
-                    </div>
-                    <div class="mb-3">
-                      <label for="investor-lname" class="col-form-label">Last Name:</label>
-                      <input type="text" class="form-control" id="investor-lname">
-                    </div>
-                    <div class="mb-3">
-                      <label for="investor-email" class="col-form-label">Email:</label>
-                      <input type="email" class="form-control" id="investor-email">
-                    </div>
-                    <div class="mb-3">
-                      <label for="invest-amount" class="col-form-label">Amount Offered:</label>
-                      <input type="number" class="form-control" id="invest-amount">
-                    </div>
-                    <div class="mb-3">
-                      <label for="invest-interest" class="col-form-label">Interest:</label>
-                      <input type="number" class="form-control" id="investor-interest"></input>
-                    </div>
+                  <div class="card-body mb-3">
+			{{ form.as_p }}
                     <button type="submit" class="btn btn-primary btn-lg mt-12">Express Interest</button>
                   </div>
                 </form>
               </div>
+</section>
+<section class="container-fluid">
+	<h2>Interested Investors</h2>
+	<ul>
+		{% for investor in interested_investors %}
+			<li
+				>{{ investor.investor_fname }} {{ investor.investor_lname }}
+			</li>
+		{% empty %}
+			<li>No investors are currecntly interested in this project.</li>
+		{% endfor %}
+	</ul>
+	
 </section>
 {% endblock %}
