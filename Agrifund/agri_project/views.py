@@ -1,8 +1,9 @@
 """views for the AgriFund Project"""
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
-from .models import Project, LoanApplication, InvestorInterest
+from .models import Project, LoanApplication, InvestorInterest, Notification
 from .forms import InvestorInterestForm, ProjectForm, LoanApplicationForm
+from .email_utils import send_investor_details_email
 
 def landing_page(request):
     """renders the landing page"""
@@ -15,7 +16,8 @@ def project_listing(request):
     return render(request, "agri_project/project_listings.html", context)
 
 def project_details(request, pk):
-    """details for a particular project based on id"""
+    """details for a particular project based on id, 
+    sends notification to farmer and validation investor interest form"""
     project = get_object_or_404(Project, pk=pk)
     loan_applications = project.loanapplication_set.all()
     interested_investors = project.investorinterest_set.all()
@@ -28,6 +30,24 @@ def project_details(request, pk):
             investor_interest = form.save(commit=False)
             investor_interest.project = project
             investor_interest.save()
+
+            # send email to farmer
+            send_investor_details_email(
+                    farmer_email = project.farmer_email,
+                    farmer_name = project.farmer_name,
+                    project_name = project.name,
+                    investor_details = investor_interest
+                    )
+            # create email notification
+            try:
+                Notification.objects.create(
+                        recipient = project.farmer_email,
+                        message = "New investment interest from {} {} for project {}"
+                        .format(investor_interest.investor_fname,
+                            investor_interest.investor_lname, project.name))
+                print("Email send to {}".format(project.farmer_email))
+            except Exception as e:
+                print(f"Error sending email: {e}")
             return redirect('project_details', pk=pk)
     context = {'project': project, 'loan_applications': loan_applications,
             'interested_investors': interested_investors, 'form': form}
