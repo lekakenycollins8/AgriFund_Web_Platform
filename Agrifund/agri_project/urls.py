@@ -8,6 +8,7 @@ router = DefaultRouter()
 router.register(r'projects', api_views.ProjectViewSet)
 router.register(r'loans', api_views.LoanApplicationViewSet)
 router.register(r'investors', api_views.InvestorInterestViewSet)
+router.register(r'notifications', api_views.NotificationViewSet)
 
 urlpatterns = [
     path('', views.landing_page, name='landing_page'),

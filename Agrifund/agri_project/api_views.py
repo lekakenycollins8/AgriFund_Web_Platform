@@ -1,8 +1,8 @@
 """all api views for AgriFund"""
 
 from rest_framework import viewsets
-from .models import Project, LoanApplication, InvestorInterest
-from .serializers import ProjectSerializer, LoanApplicationSerializer, InvestorInterestSerializer
+from .models import Project, LoanApplication, InvestorInterest, Notification
+from .serializers import ProjectSerializer, LoanApplicationSerializer, InvestorInterestSerializer, NotificationSerializer
 
 class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()
@@ -15,3 +15,7 @@ class LoanApplicationViewSet(viewsets.ReadOnlyModelViewSet):
 class InvestorInterestViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = InvestorInterest.objects.all()
     serializer_class = InvestorInterestSerializer
+
+class NotificationViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Notification.objects.all()
+    serializer_class = NotificationSerializer

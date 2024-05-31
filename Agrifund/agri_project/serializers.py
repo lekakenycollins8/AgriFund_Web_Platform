@@ -1,7 +1,7 @@
 """Contains serializers for the AgriFund model for API's"""
 
 from rest_framework import serializers
-from .models import Project, LoanApplication, InvestorInterest
+from .models import Project, LoanApplication, InvestorInterest, Notification
 
 class InvestorInterestSerializer(serializers.ModelSerializer):
     """serializes investor interest instances"""
@@ -25,3 +25,9 @@ class LoanApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = LoanApplication
         fields = "__all__"
+
+class NotificationSerializer(serializers.ModelSerializer):
+    """serializes notification details"""
+    class Meta:
+        model = Notification
+        fields = ['recipient', 'message', 'created_at']
