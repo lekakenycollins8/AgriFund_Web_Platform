@@ -6,7 +6,7 @@
 		      <div class="card-header">
                   <h3 class="mb-0"><strong>Agribusiness Project Details</strong></h3>
                 </div>
-                <form method="post">
+                <form id="projectCreate" method="post">
                   {% csrf_token %}
                   <div class="form-group">
                       <label for="name">Project Name<span class="text-danger">*</span></label>
@@ -49,4 +49,11 @@
             </div>
           </div>
 </div>
+<script>
+	$(document).ready(function() {
+			$('#projectCreate').on('submit', function(event) {
+				alert('Project created successfully!');
+				});
+		});
+</script>
 {% endblock %}

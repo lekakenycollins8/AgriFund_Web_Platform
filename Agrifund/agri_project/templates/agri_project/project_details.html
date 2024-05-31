@@ -37,7 +37,7 @@
 <section class="container-fluid">
 	<h1><span class="badge bg-info text-dark">For Investor</span>: Fill details to express interest</h1>
               <div class="card mb-4">
-                <form method="POST">
+                <form id="investorInterestForm" method="POST">
 		  {% csrf_token %}
                   <div class="card-header">
                     <h4 class="mb-0"><strong>Investor Details</strong></h4>
@@ -49,6 +49,24 @@
                 </form>
               </div>
 </section>
+<script>
+$(document).ready(function(){
+    $('#investorInterestForm').on('submit', function(event){
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+        $.ajax({
+            url: "{% url 'project_details' pk=project.pk %}", // The URL to submit the form data to
+            type: "POST",
+            data: $(this).serialize(), // Serialize the form data
+            success: function(response){
+                alert("Interest expressed successfully!");
+            },
+            error: function(xhr, status, error){
+                alert("An error occurred. Please try again.");
+            }
+        });
+    });
+});
+</script>
 <section class="container-fluid">
 	<h2>Interested Investors</h2>
 	<ul>
