@@ -3,7 +3,7 @@
 
 {% block content %}
 
-
+<div class="py-8 bg-light">
 <section>
 	<div class="bg-dark py-5">
                 <div class="container px-5">
@@ -33,25 +33,25 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-			    <img src="{% static 'images/farmers.jpeg'%}" alt="farmers" width="1500" height="350">
+			    <img src="{% static 'images/farmer.jpg'%}" alt="farmers" width="1500" height="350">
                         <div class="carousel-caption">
-                            <strong><h3>Farmers</h3>
-                            <p>Post projects and find potential investors</p></strong>
+                            <strong><h3 class="fw-bolder">Farmers</h3>
+                            <p class="fw-bolder">Post projects and find potential investors</p></strong>
                         </div>      
                     </div>
 
                     <div class="item">
-			    <img src="{% static 'images/investors.jpeg' %}" alt="Investors" width="1500" height="350">
+			    <img src="{% static 'images/investor.jpg' %}" alt="Investors" width="1500" height="350">
                         <div class="carousel-caption">
-                            <strong><h3>Investors</h3>
-                            <p>Agribusiness investment opportunities available</p></strong>
+                            <strong><h3 class="fw-bolder">Investors</h3>
+                            <p class="fw-bolder">Agribusiness investment opportunities available</p></strong>
                         </div>      
                     </div>
             
                     <div class="item">
-			    <img src="{% static 'images/agri_moon.jpeg'%}" width="1500" height="350">
+			    <img src="{% static 'images/agriMoon.jpg'%}" width="1500" height="350">
                         <div class="carousel-caption">
-                            <p><strong>Agribusiness to the moon!</strong></p>
+                            <p class="fw-bolder"><strong>Agribusiness to the moon!</strong></p>
                         </div>      
                     </div>
                 </div>
@@ -90,11 +90,10 @@
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-6">
-                            <!-- Testimonial 1-->
                             <div class="card mb-4">
                                 <div class="card-body p-4">
                                     <div class="d-flex">
-                                        <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                        <div class="flex-shrink-0"><i class="bi bi-arrow-up-right-circle"></i></div>
                                         <div class="ms-4">
                                             <h4>Create a project</h4>
                                             <p class="mb-1">The farmer fills out a form with project details, which is then saved to the database and listed on the platform.</p>
@@ -103,11 +102,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Testimonial 2-->
                             <div class="card">
                                 <div class="card-body p-4">
                                     <div class="d-flex">
-                                        <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                        <div class="flex-shrink-0"><i class="bi bi-arrow-up-right-circle"></i></div>
                                         <div class="ms-4">
                                             <h4>Apply for a loan</h4>
                                             <p class="mb-1">The farmer submits a loan application form, which is linked to their project and saved to the database.</p>
@@ -119,7 +117,7 @@
                             <div class="card">
                                 <div class="card-body p-4">
                                     <div class="d-flex">
-                                        <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                        <div class="flex-shrink-0"><i class="bi bi-arrow-up-right-circle"></i></div>
                                         <div class="ms-4">
                                             <h4>Browse Projects</h4>
                                             <p class="mb-1">The investor views a list of projects with basic details on the project listings page.</p>
@@ -131,7 +129,7 @@
                             <div class="card">
                                 <div class="card-body p-4">
                                     <div class="d-flex">
-                                        <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                        <div class="flex-shrink-0"><i class="bi bi-arrow-up-right-circle"></i></div>
                                         <div class="ms-4">
                                             <h4>Express Interest</h4>
                                             <p class="mb-1">The investor fills out a form with their contact details, which triggers a notification to the farmer and updates the project's status to "Interested."</p>
@@ -143,7 +141,7 @@
                             <div class="card">
                                 <div class="card-body p-4">
                                     <div class="d-flex">
-                                        <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                        <div class="flex-shrink-0"><i class="bi bi-arrow-up-right-circle"></i></div>
                                         <div class="ms-4">
                                             <h4>Receive Notifications</h4>
                                             <p class="mb-1">The farmer receives an email with the investor's contact details and the project's status is updated.</p>
@@ -169,6 +167,68 @@
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
                             <h2 class="h4 fw-bolder">Vision</h2>
                             <p>To revolutionize the agricultural industry by becoming the leading online marketplace for agribusiness funding, fostering a thriving ecosystem where every farmer has the opportunity to realize their full potential and every investor can make impactful, sustainable investments.</p>
+                        </div>
+                    </div>
+                </div>
+</section><br>
+<!-- testimonial -->
+<section>
+                <div class="py-8 bg-light ">
+                    <div class="container">
+                        <!-- row -->
+                        <div class="row">
+                            <div class="offset-xl-3 col-xl-6 col-md-12">
+                                <!-- heading -->
+                                <div class="text-center mb-8">
+                                    <h1 class="display-4 fw-bold mb-3">Farmers & Investors <i class="bi bi-heart-fill text-danger mx-1"></i> AgriFund
+                                    </h1>
+                                    <!-- para -->
+                                    <p class="fs-4">AgriFund has helped farmers connect with investors. That leads to happy tweets like these:</p>
+                                </div>
+                    
+                            </div>
+                        </div>
+                    
+                    
+                        <div class="row">
+                        <!-- col -->
+                            <div class="col-md-6 col-12">
+                                <!-- card -->
+                                <div class="card mb-6 mb-lg-0">
+                                    <!-- card body -->
+                                    <div class="card-body p-6">
+                                        <i class="bi bi-chat-right-quote-fill text-primary fs-1 text-light-primary lh-1 mb-3 d-block"></i>
+                                        
+                    
+                                        <p class="fs-3 text-dark fw-semibold">"AgriFund has created an incredibly seamless experience for agribusiness project creation and loan application. Through the platform I was able to secure funding for my Snail farming agriproject."</p>
+                    
+                                        <div class="d-flex mt-4 align-items-center">
+                                            <div class="ms-2">
+                                                <h5 class="text-primary mb-0">Kosmo Kramer</h5>
+                                                <p class="mb-0 fs-6">Farmer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <!-- card -->
+                                <div class="card">
+                                    <!-- card body -->
+                                    <div class="card-body p-6">
+                                        <i class="bi bi-chat-right-quote-fill text-primary fs-1 text-light-primary lh-1 mb-3 d-block"></i>
+                                        
+                                        <p class="fs-3 text-dark fw-semibold">"I am very satisfied with the agribusiness venture I was able to invest in through AgriFund. The app has helped me a lot with finding potential agribusiness projects to invest in. Watch are you waiting for, this is new chance to make a change in the agriculture industry"</p>
+                                        <div class="d-flex mt-4 align-items-center">
+                                            
+                                            <div class="ms-2">
+                                                <h5 class="text-primary mb-0">Lewis Sonya</h5>
+                                                <p class="mb-0 fs-6">Investor</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -203,4 +263,5 @@
                     </div>
                 </div>
 </section>
+</div>
 {% endblock %}
